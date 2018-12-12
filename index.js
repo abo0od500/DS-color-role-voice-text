@@ -92,4 +92,4 @@ message.guild.createChannel('Talk ◥', 'voice')
 .catch(console.error);
     }
 });
-client.login();
+client.login(process.env.TOKEN);
