@@ -7,7 +7,15 @@ client.on('guildMemberAdd', member => {
     let myRole = member.guild.roles.find(role => role.name === "Wiz");
     member.addRole(myRole).catch(console.error);});
 
-
+// instant Invite
+client.on('message', message => {
+if(!message.channel.guild) return;
+if(message.content.startsWith('رابط')) {
+channel.createInvite()
+  .then(invite => message.reply(`Created an invite with a code of ${invite.code}`))
+  .catch(console.error);
+}
+});
 
 
 client.on('message', message => {
