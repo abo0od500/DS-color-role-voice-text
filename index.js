@@ -10,7 +10,13 @@ client.on('guildMemberAdd', member => {
 // instant Invite
 client.on('message', message => {
 if(message.content.startsWith('رابط')) {
-message.channel.createInvite()
+	
+var options = {
+maxAge: 86400,
+maxUses: 2
+};
+	
+message.channel.createInvite(options)
   .then(invite => message.channel.send(invite.url))
   .catch(console.error);
 }
