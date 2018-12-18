@@ -10,7 +10,7 @@ client.on('guildMemberAdd', member => {
 // instant Invite
 client.on('message', message => {
 if(message.content.startsWith('رابط')) {
-channel.createInvite()
+message.channel.createInvite()
   .then(invite => message.channel.send(`Created an invite with a code of ${invite.code}`))
   .catch(console.error);
 }
