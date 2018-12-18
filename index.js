@@ -11,7 +11,7 @@ client.on('guildMemberAdd', member => {
 client.on('message', message => {
 if(message.content.startsWith('رابط')) {
 message.channel.createInvite()
-  .then(invite => message.channel.send(`Created an invite with a code of ${invite.code}`))
+  .then(invite => message.channel.send(invite.url))
   .catch(console.error);
 }
 });
