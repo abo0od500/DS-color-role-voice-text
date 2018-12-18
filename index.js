@@ -12,7 +12,7 @@ client.on('message', message => {
 if(message.content.startsWith('رابط')) {
 	
 var options = {
-inviter: message.author.id,
+inviter: message.author,
 unique: true,
 maxAge: 86400,
 maxUses: 2
