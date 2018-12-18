@@ -2,6 +2,14 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = 'H.';
 ///by-hosam(galaxy-bot-dev)🚫
+
+client.on('guildMemberAdd', member => { 
+    let myRole = member.guild.roles.find(role => role.name === "Wiz");
+    member.addRole(myRole).catch(console.error);});
+
+
+
+
 client.on('message', message => {
     if (message.content.startsWith(prefix + "c.role")) {
      if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
