@@ -13,7 +13,7 @@ if(message.content.startsWith('رابط')) {
 	
 var options = {
 inviter: message.author.id,
-unique: ' true,
+unique: true,
 maxAge: 86400,
 maxUses: 2
 };
