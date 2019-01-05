@@ -7,22 +7,6 @@ client.on('guildMemberAdd', member => {
     let myRole = member.guild.roles.find(role => role.name === "Wiz");
     member.addRole(myRole).catch(console.error);});
 
-// instant Invite
-client.on('message', message => {
-if(message.content.startsWith('رابط')) {
-	
-var options = {
-unique: true,
-maxAge: 86400,
-maxUses: 2
-};
-	
-message.channel.createInvite(options)
-  .then(invite => message.channel.send(invite.url))
-  .catch(console.error);
-}
-});
-
 
 client.on('message', message => {
     if (message.content.startsWith(prefix + "c.role")) {
